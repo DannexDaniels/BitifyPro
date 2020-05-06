@@ -11,7 +11,6 @@
 <script src="<?php echo base_url('js/sb-admin.min.js'); ?>"></script>
 <!-- Custom scripts for this page-->
 <script src="<?php echo base_url('js/sb-admin-datatables.min.js'); ?>"></script>
-<script src="<?php echo base_url('js/sb-admin-charts.min.js'); ?>"></script>
 </div>
 </body>
 
