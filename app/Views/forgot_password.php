@@ -7,11 +7,11 @@
                 <h4>Forgot your password?</h4>
                 <p>Enter your email address and we will send you instructions on how to reset your password.</p>
             </div>
-            <form>
+            <form action="/authentication/forgot_password" method="post">
                 <div class="form-group">
-                    <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email address">
+                    <input class="form-control" name="email" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email address" required>
                 </div>
-                <a class="btn btn-primary btn-block" href="login.html">Reset Password</a>
+                <input type="submit" name="resetpass" value="Reset Password" class="btn btn-primary btn-block"/>
             </form>
             <div class="text-center">
                 <a class="d-block small mt-3" href="<?php echo base_url('register'); ?>">Register an Account</a>

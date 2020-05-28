@@ -18,3 +18,4 @@
     <link href="<?php echo base_url('css/sb-admin.css'); ?>" rel="stylesheet">
 
 </head>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
