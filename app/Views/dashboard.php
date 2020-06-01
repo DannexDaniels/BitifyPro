@@ -197,7 +197,14 @@
         <div class="modal fade" id="buypackage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <?php
-                $hidden = ['bitcoins' => '0.00000123456', 'wallet' => 'sdfsfsf4345j3l54jl345j34j53j53534j53lj53l5'];
+
+                //convert usd to bitcoins
+                $url = 'https://blockchain.info/tobtc?currency=usd&value=10';
+                $bitcoin = file_get_contents($url);
+
+                $walletid = 'sdfsfsf4345j3l54jl345j34j53j53534j53lj53l5';
+
+                $hidden = ['bitcoins' => $bitcoin, 'wallet' => $walletid];
 
                 echo form_open('/account','',$hidden)?>
                     <div class="modal-content">
@@ -211,18 +218,16 @@
                         <center>You have selected a Bronze package of $10 (0.00000012345BTC)</center>
                             <div class="form-group">
                                 <label for="username">Send this bitcoins</label>
-                                <input class="form-control" name="bitcoins" value="0.00000123456" type="text" aria-describedby="emailHelp" placeholder="Enter User Name" disabled>
+                                <input class="form-control" name="bitcoins" value="<?php echo $bitcoin; ?>" type="text" aria-describedby="emailHelp" placeholder="Enter User Name" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">To this wallet</label>
-                                <input class="form-control" name="wallet" value="sdfsfsf4345j3l54jl345j34j53j53534j53lj53l5" type="text" aria-describedby="emailHelp" placeholder="Enter email"  required disabled>
+                                <input class="form-control" name="wallet" value="<?php echo $walletid;?>" type="text" aria-describedby="emailHelp" placeholder="Enter email"  required disabled>
                             </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="<?php echo base_url('login'); ?>">Logout</a>
-                        <input type="submit" name="register" value="Register" class="btn btn-primary btn-block" href="login.html">
+                        <input type="submit" name="register" value="Buy Package" class="btn btn-primary btn-block" href="login.html">
                     </div>
                 </div>
                 </form>

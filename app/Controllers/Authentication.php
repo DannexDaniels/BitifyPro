@@ -17,6 +17,23 @@ class Authentication extends Controller
         $this->login();
     }
 
+    public function sendMail($data){
+        $email = \Config\Services::email();
+
+        $email->setFrom('dannexparelific@gmail.com', 'Dannex Technologies');
+        $email->setTo($data['email']);
+        $email->setCC('dannexdaniels@gmail.com');
+
+        $email->setSubject('Verify Email Account');
+        $email->setMessage('You have created an account with us successfully. kindly login in using blah blah blah.');
+
+        if($email->send())
+            echo "email has been sent to ".$data['email'];
+        else
+            echo "something is wrong with sending email";
+
+
+    }
     public function createUser(){
         $model = new AuthenticationModel();
 
@@ -39,9 +56,10 @@ class Authentication extends Controller
 
             $response = \CodeIgniter\Database\Config::getConnections();
 
-            if ($response['default']->mysqli->errno==0)
+            if ($response['default']->mysqli->errno==0) {
                 echo "registration was successfull";
-            elseif($response['default']->mysqli->errno==1062)
+                $this->sendMail($data);
+            }elseif($response['default']->mysqli->errno==1062)
                 echo "username or email address is already used by someone else";
             else
                 echo "registration failed because is a ".$response['default']->mysqli->error;
