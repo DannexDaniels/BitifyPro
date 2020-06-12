@@ -1,0 +1,42 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<h1 id="codeigniter-4-framework">CodeIgniter 4 Framework</h1>
+<h2 id="what-is-codeigniter">What is CodeIgniter?</h2>
+<p>CodeIgniter is a PHP full-stack web framework that is light, fast, flexible, and secure. 
+More information can be found at the <a href="http://codeigniter.com">official site</a>.</p>
+<p>This repository holds the distributable version of the framework,
+including the user guide. It has been built from the 
+<a href="https://github.com/codeigniter4/CodeIgniter4">development repository</a>.</p>
+<p>More information about the plans for version 4 can be found in <a href="http://forum.codeigniter.com/thread-62615.html">the announcement</a> on the forums.</p>
+<p>The user guide corresponding to this version of the framework can be found
+<a href="https://codeigniter4.github.io/userguide/">here</a>. </p>
+<h2 id="important-change-with-indexphp">Important Change with index.php</h2>
+<p><code>index.php</code> is no longer in the root of the project! It has been moved inside the <em>public</em> folder,
+for better security and separation of components.</p>
+<p>This means that you should configure your web server to "point" to your project's <em>public</em> folder, and
+not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter <em>public/...</em>, as the rest of your logic and the
+framework are exposed.</p>
+<p><strong>Please</strong> read the user guide for a better explanation of how CI4 works!
+The user guide updating and deployment is a bit awkward at the moment, but we are working on it!</p>
+<h2 id="repository-management">Repository Management</h2>
+<p>We use Github issues, in our main repository, to track <strong>BUGS</strong> and to track approved <strong>DEVELOPMENT</strong> work packages.
+We use our <a href="http://forum.codeigniter.com">forum</a> to provide SUPPORT and to discuss
+FEATURE REQUESTS.</p>
+<p>This repository is a "distribution" one, built by our release preparation script. 
+Problems with it can be raised on our forum, or as issues in the main repository.</p>
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions from the community.</p>
+<p>Please read the <a href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/contributing.md"><em>Contributing to CodeIgniter</em></a> section in the development repository.</p>
+<h2 id="server-requirements">Server Requirements</h2>
+<p>PHP version 7.2 or higher is required, with the following extensions installed: </p>
+<ul>
+<li><a href="http://php.net/manual/en/intl.requirements.php">intl</a></li>
+<li><a href="http://php.net/manual/en/curl.requirements.php">libcurl</a> if you plan to use the HTTP\CURLRequest library</li>
+</ul>
+<p>Additionally, make sure that the following extensions are enabled in your PHP:</p>
+<ul>
+<li>json (enabled by default - don't turn it off)</li>
+<li><a href="http://php.net/manual/en/mbstring.installation.php">mbstring</a></li>
+<li><a href="http://php.net/manual/en/mysqlnd.install.php">mysqlnd</a></li>
+<li>xml (enabled by default - don't turn it off)</li>
+</ul>
+</body></html>
